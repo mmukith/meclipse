@@ -1,0 +1,25 @@
+package classWork;
+
+import practiceJava.utility;
+
+public class MainAPP {
+	static String dbnm="";
+	
+	public static void main(String[] args) 
+	{
+				
+		ReadDb rd= new ReadDb();
+		String sql="select * from customer ";		   
+		System.out.println("SQL: "+sql);
+		String dbrec=rd.readdb(sql,dbnm);
+		System.out.println("===============================================================");
+		   DisplayMaxNumber dn=new DisplayMaxNumber();
+	    	dn.dis(99,106);
+	    	System.out.println("======================================");
+
+	    	DisplayMenu dm=new DisplayMenu();
+			dm.getInput();
+
+	}
+
+}

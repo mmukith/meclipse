@@ -1,0 +1,57 @@
+package classWork;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.Statement;
+
+public class ReadDb {
+	public static String readdb(String sql,String dbnm)
+	{
+	// =======================================================
+
+	try
+	        {
+	             Class.forName("oracle.jdbc.driver.OracleDriver");
+	       		Statement st=null;
+			ResultSet rs = null;
+	                String url = "jdbc:oracle:thin:@localhost:1521:orcl";
+	 	 	Connection cn = DriverManager.getConnection( url, "bud", "bud" );
+
+	     
+		
+	            System.out.println("reading database");
+	// =============================================================
+
+			st = cn.createStatement();
+			rs = st.executeQuery( sql );
+
+	                
+	  		
+	  		
+	  		while(rs.next())
+	  		{
+
+
+	String ret=rs.getString(1) +" , "+ rs.getString(2)+" , "+ rs.getString(3)+" , "+ rs.getString(4)+" , "+ rs.getString(5) ;
+	System.out.println(ret);
+			//System.out.println(rs.getString(1) +" , "+ rs.getString(2)+" , "+ rs.getString(3)+" , "+ rs.getString(4)+" , "+ rs.getString(5) );
+
+
+	}
+	cn.close();
+	       
+	}
+		catch (Exception e)
+		{
+				
+	 		 e.printStackTrace();
+	    
+	}
+
+	// =========================================================
+	       return "db values";
+
+	}
+
+}

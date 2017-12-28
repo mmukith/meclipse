@@ -1,0 +1,151 @@
+package practiceJava;
+
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.Statement;
+import java.util.Scanner;
+
+public class utility { 
+
+
+	public static String readrec(String Filename)
+
+	{
+
+	// ====================================================================
+
+	// Read the Rec
+
+	// ====================================================================
+
+	BufferedReader br = null;
+
+	FileReader fr = null;
+
+	String sCurrentLine="";
+
+	String retrec="";
+
+	try {
+
+	fr = new FileReader(Filename);
+
+	br = new BufferedReader(fr);
+
+	while ((sCurrentLine = br.readLine()) != null) {
+
+	retrec=retrec + sCurrentLine+";";
+
+	}
+
+	} catch (IOException e) {
+
+	e.printStackTrace();
+
+	} finally {
+
+
+	try {
+
+	if (br != null)
+
+	br.close();
+
+	if (fr != null)
+
+	fr.close();
+
+	} catch (IOException ex) {
+
+	ex.printStackTrace();
+
+	}
+
+	}
+
+	return retrec;
+
+	}
+
+public static String readdb(String sql,String dbnm)
+{
+// =======================================================
+
+try
+        {
+             Class.forName("oracle.jdbc.driver.OracleDriver");
+       		Statement st=null;
+		ResultSet rs = null;
+                String url = "jdbc:oracle:thin:@localhost:1521:orcl";
+ 	 	Connection cn = DriverManager.getConnection( url, "bud", "bud" );
+
+     
+	
+            System.out.println("connection worked");
+// =============================================================
+
+		st = cn.createStatement();
+		rs = st.executeQuery( sql );
+
+                
+  		String queryStringuser="";
+  		//SimpleDateFormat sdfDestination=null;
+  		int count=0;
+  		String strcolor = "";
+  		while(rs.next())
+  		{
+
+
+
+		System.out.println(rs.getString(1) +" , "+ rs.getString(2)+" , "+ rs.getString(3)+" , "+ rs.getString(4)+" , "+ rs.getString(5) );
+
+
+}
+cn.close();
+       
+}
+	catch (Exception e)
+	{
+			
+ 		 e.printStackTrace();
+    
+}
+
+// =========================================================
+       return "xxxxx";
+
+}
+public  static  void  writereport(String msg)
+{
+
+
+}
+
+public static void verifydata(String Data)
+{
+
+}
+public  static  String  getInput()
+{
+       Scanner scannerservent  = new Scanner(System.in);
+       System.out.println("Enter ==>your option 1/2/3 ");
+       String  nm = scannerservent.nextLine();
+       switch(nm){
+       case "1":
+       
+       System.out.println("reading file  " + nm);
+       break;
+       case "2":
+           
+           System.out.println("writing report  " + nm);
+           break;
+        return nm;
+        }
+      // String val="Gupta";
+      // return  val;
+}
+}

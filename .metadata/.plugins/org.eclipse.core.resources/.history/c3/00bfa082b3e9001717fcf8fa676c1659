@@ -1,0 +1,17 @@
+package classWork;
+
+
+ public class DisplayMaxNumber {
+	 
+    public static void dis(int m){
+         int i=1;
+         while(i<=m){
+              System.out.println(i);
+              i++;
+         }
+        }
+    public static void main(String[] args) {
+    	DisplayMaxNumber dn=new DisplayMaxNumber();
+    	dn.dis(10);
+    }
+}

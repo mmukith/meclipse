@@ -1,0 +1,30 @@
+package classWork;
+
+import practiceJava.utility;
+
+public class MainAPP {
+	static String dbnm="";
+	
+	public static void main(String[] args) {
+		
+		ReadFile rf= new ReadFile();
+		ReadDb rd= new ReadDb();
+		   String sql="select * from customer ";
+		   //String sql="select * from customer where cust_no=502";
+		   System.out.println("SQL: "+sql);
+		   //System.out.println("reading database");
+		   String dbrec=rd.readdb(sql,dbnm);
+		   System.out.println("===============================================================");
+		 
+		
+
+		   DisplayMaxNumber dn=new DisplayMaxNumber();
+	    	dn.dis(99,106);
+	    	System.out.println("======================================");
+
+	    	DisplayMenu dm=new DisplayMenu();
+			dm.getInput();
+
+	}
+
+}

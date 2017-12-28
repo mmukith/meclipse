@@ -1,0 +1,38 @@
+package practiceJava;
+
+
+
+
+public class MainP  { 
+
+public static void main(String[] args) throws Exception { 
+  System.out.println(" program started==>");
+   String Filenm = "C:\\Mfolder\\2017sep\\inp.txt";
+   String FileRec="";
+   String OLTPdbnm="orcl";
+   String OLAPdbnm="orcl";
+
+   utility ut = new utility();
+   
+
+   FileRec=ut.readrec(Filenm);
+   System.out.println("All record in Input file= " + FileRec);
+   String[] inputData=FileRec.split(";");
+   int i=0;
+String recx = inputData[i];
+String recx1 = inputData[i+1];
+System.out.println(recx+" =1 and 2= "+recx1);
+
+   /*String OLTPsql="select * from customer where custno='" + Custno + "'";
+   System.out.println(OLTPsql);
+   String OLTPREC=ut.readdb(OLTPsql,OLTPdbnm);
+   
+   String OLAPsql="select * from dimcustomer where custno='" + Custno + "'";
+   System.out.println(OLAPsql);
+   String OLAPREC=ut.readdb(OLAPsql,OLAPdbnm);*/
+
+     
+
+}
+
+}

@@ -1,0 +1,40 @@
+package classWork;
+
+import java.util.Scanner;
+
+public class DisplayMenu {
+
+	public  static  void  getInput()
+	{
+	       Scanner sc  = new Scanner(System.in);
+	       System.out.println("Enter  1 to read filr ");
+	       System.out.println("Enter 2 to write ");
+	       System.out.println("Enter 3 to exit ");
+	       String  nm = sc.nextLine();
+	       
+	       if (nm.contains("1")){
+	    	   nm = sc.nextLine();
+	       System.out.println("reading file  " );
+	       
+	       
+	       }
+	       
+	       if (nm.contains("2")){
+	    	   String  nm1 = sc.nextLine();
+	           System.out.println("writing file  " );
+	               
+	       }
+	       if (nm.contains("3")){
+	           System.exit(0);}
+	        }
+	     
+	
+
+	
+	public static void main(String[] args) {
+		
+		DisplayMenu dm=new DisplayMenu();
+		dm.getInput();
+	}
+
+}

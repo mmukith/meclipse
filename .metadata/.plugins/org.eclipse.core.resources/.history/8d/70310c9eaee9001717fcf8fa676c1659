@@ -1,0 +1,9 @@
+package classWork;
+
+public class MainAPP {
+
+	public static void main(String[] args) {
+		
+	}
+
+}

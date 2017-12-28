@@ -1,0 +1,18 @@
+package classWork;
+
+
+ public class DisplayMaxNumber {
+	 
+    public  void dis(int i, int m){
+         //int i=1;
+         System.out.println("displaying min 1 to max "+m);
+         while(i<=m){
+              System.out.println(i);
+              i++;
+         }
+        }
+    /*public static void main(String[] args) {
+    	DisplayMaxNumber dn=new DisplayMaxNumber();
+    	dn.dis(15);
+    }*/
+}

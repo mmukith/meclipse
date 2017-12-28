@@ -1,0 +1,10 @@
+package classWork;
+
+public class MainAPP {
+	static String recx="";
+	public static void main(String[] args) {
+		ReadFile rf= new ReadFile();
+		ReadDb rd= new ReadDb();
+	}
+
+}

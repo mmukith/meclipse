@@ -1,0 +1,45 @@
+package classWork;
+
+import practiceJava.utility;
+
+public class MainAPP {
+	static String recx="";
+	
+	public static void main(String[] args) {
+		
+		ReadFile rf= new ReadFile();
+		ReadDb rd= new ReadDb();
+		System.out.println(" reading file");
+		   String Filenm = "C:\\Mfolder\\2017sep\\inp.txt";
+		   String FileRec="";
+		   String OLTPdbnm="orcl";
+		   String OLAPdbnm="orcl";
+
+		   
+		   
+
+		   FileRec=rf.readrec(Filenm);
+		   System.out.println("All record in Input file= " + FileRec);
+		   String[] inputData=FileRec.split(";");
+		   int i=0;
+		   for ( i=0;i<inputData.length;i++){
+		String recx = inputData[i];
+		//String recx1 = inputData[i+1];
+		System.out.println(" line "+(i+1)+"= "+recx);
+		   String recy=recx.split(",")[0];
+		   String recz=recx.split(",")[1];
+		   String sql="select * from customer where cust_no='" + recy + "'";
+		   System.out.println(sql);
+		   String OLTPREC=rd.readdb(sql,OLTPdbnm);
+		   
+		   }
+		   /*String OLAPsql="select * from dimcustomer where custno='" + Custno + "'";
+		   System.out.println(OLAPsql);
+		   String OLAPREC=ut.readdb(OLAPsql,OLAPdbnm);*/
+
+		    // ut.getInput();
+
+
+	}
+
+}

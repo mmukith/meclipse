@@ -1,0 +1,37 @@
+package practiceJava;
+
+
+
+
+public class MainP  { 
+
+public static void main(String[] args) throws Exception { 
+  System.out.println("DWPROJ  program started==>");
+   String Filenm = "C:\\Mfolder\\2017sep\\input.dat";
+   String FileRec="";
+   String OLTPdbnm="T1";
+   String OLAPdbnm="T1";
+
+   utility ut = new utility();
+   
+
+   FileRec=ut.readfile(Filenm);
+   System.out.println("Input rec=" + FileRec);
+   String Custno=FileRec.split(",")[0];
+   String surrogatekey=FileRec.split(",")[1];
+   System.out.println("CustInfo=" + Custno +  "sk=" + surrogatekey);
+
+
+   String OLTPsql="select * from customer where custno='" + Custno + "'";
+   System.out.println(OLTPsql);
+   String OLTPREC=ut.readdb(sql,OLTPdbnm);
+   
+   String OLAPsql="select * from dimcustomer where custno='" + Custno + "'";
+   System.out.println(OLAPsql);
+   String OLAPREC=ut.readdb(OLAPsql,OLAPdbnm);
+
+     
+
+}
+
+}
